@@ -1,7 +1,39 @@
 import "./App.css";
 import { Sidebar } from "./components/Sidebar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import ComprarProducto from "./routes/ComprarProducto";
+import Clientes from "./routes/Clientes";
+import Empleados from "./routes/Empleados";
+import VenderProducto from "./routes/VenderProducto";
+import Error from "./routes/Error";
+import ConstructionPage from "./routes/ConstructionPage";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <VenderProducto />,
+      errorElement: <Error />,
+    },
+    {
+      path: "/ComprarProductos",
+      element: <ComprarProducto />,
+    },
+    {
+      path: "/Clientes",
+      element: <Clientes />,
+    },
+    {
+      path: "/Empleados",
+      element: <Empleados />,
+    },
+    {
+      path: "/Reportes",
+      element: <ConstructionPage />,
+    },
+  ]);
+
   return (
     <div className="App flex">
       {/* Sidebar */}
@@ -11,7 +43,7 @@ function App() {
 
       {/* Rest of the content */}
       <div className="flex-grow">
-        {/* Aquí puedes colocar el resto del contenido de tu aplicación */}
+        <RouterProvider router={router} />
       </div>
     </div>
   );
