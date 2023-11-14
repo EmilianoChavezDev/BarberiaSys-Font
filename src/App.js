@@ -13,12 +13,12 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <VenderProducto />,
+      element: <ConstructionPage />,
       errorElement: <Error />,
     },
     {
       path: "/ComprarProductos",
-      element: <ComprarProducto />,
+      element: <ConstructionPage />,
     },
     {
       path: "/Clientes",
@@ -26,7 +26,7 @@ function App() {
     },
     {
       path: "/Empleados",
-      element: <Empleados />,
+      element: <ConstructionPage />,
     },
     {
       path: "/Reportes",
