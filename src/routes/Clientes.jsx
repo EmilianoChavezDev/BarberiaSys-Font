@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import Table from "../components/Table";
 import { RiEdit2Line, RiDeleteBin6Line } from "react-icons/ri";
 import { opcionesFiltrarPor } from "../helpers";
-import CustomModal from "../components/CustomModal";
+import ClienteModal from "../components/modals/ClienteModal";
 
 const Clientes = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -94,7 +94,11 @@ const Clientes = () => {
     <>
       {/* Contenedor principal */}
       <div>
-        <CustomModal isOpen={modalIsOpen} closeModal={closeModal} />
+        <ClienteModal
+          isOpen={modalIsOpen}
+          closeModal={closeModal}
+          Tittle={"Agregar Nuevo Cliente"}
+        />
         {/**Cabecera */}
         <div className="flex flex-col bg-gray-200 p-4">
           {/* Título de la pantalla */}
